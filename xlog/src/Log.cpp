@@ -20,7 +20,7 @@
 namespace xlog
 {
     Log::Log()
-    :logger_(getLogger(*this)), formatter(getFormatter(*this))
+    :logger(getLogger(*this)), formatter(getFormatter(*this))
     {
     }
 
@@ -52,9 +52,9 @@ namespace xlog
     void Log::log(LogLevel level, const char *context, const char *msg,
         va_list args)
     {
-        if(logger_)
+        if(logger)
         {
-            logger_->log(formatter, LogContext(level, time(0), context,
+            logger->log(formatter, LogContext(level, time(0), context,
                     std::this_thread::get_id()), msg, args);
         }
     }

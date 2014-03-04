@@ -39,7 +39,7 @@ namespace xlog
             va_list args);
 
     private:
-        ILogger *const logger_;
+        ILogger *const logger;
         IFormatter &formatter;
     };
 }
