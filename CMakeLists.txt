@@ -10,7 +10,7 @@ set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 set(EXECUTABLE_OUTPUT_PATH "${PROJECT_BINARY_DIR}/bin")
 
 if(UNIX)
-    add_definitions("-Wall -Wextra -pedantic -std=c++11")
+    add_definitions("-Wall -Wextra -Weffc++ -pedantic")
 endif()
 
 add_subdirectory(xlog)

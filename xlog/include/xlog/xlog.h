@@ -1,8 +1,6 @@
 #ifndef XLOG_XLOG_H
 #define XLOG_XLOG_H
 
-#include <cstdarg>
-
 #include "xlog/Log.h"
 
 namespace xlog
@@ -19,7 +17,7 @@ namespace xlog
 namespace xlog \
 { \
     template<> \
-    ILogger *Log::getLogger(const Log&) \
+    ILogger *getLogger(const Log&) \
     { \
         static type logger; \
         return &logger; \
@@ -30,7 +28,7 @@ namespace xlog \
 namespace xlog \
 { \
     template<> \
-    ILogger *Log::getLogger(const Log&) \
+    ILogger *getLogger(const Log&) \
     { \
         return nullptr; \
     } \
@@ -40,7 +38,7 @@ namespace xlog \
 namespace xlog \
 { \
     template<> \
-    ILogger *Log::getLogger(const Log&) \
+    ILogger *getLogger(const Log&) \
     { \
         static type logger(conf); \
         return &logger; \
@@ -51,7 +49,7 @@ namespace xlog \
 namespace xlog \
 { \
     template<> \
-    IFormatter &Log::getFormatter(const Log&) \
+    IFormatter &getFormatter(const Log&) \
     { \
         static type formatter; \
         return formatter; \
@@ -62,7 +60,7 @@ namespace xlog \
 namespace xlog \
 { \
     template<> \
-    IFormatter &Log::getFormatter(const Log&) \
+    IFormatter &getFormatter(const Log&) \
     { \
         static type formatter(conf); \
         return formatter; \

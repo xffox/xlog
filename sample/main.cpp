@@ -1,9 +1,10 @@
 #include "xlog/xlog.h"
 #include "xlog/ConsoleLogger.h"
 #include "xlog/Formatter.h"
+#include "lib.h"
 
 XLOG_SET_LOGGER(xlog::ConsoleLogger)
-XLOG_SET_FORMATTER(xlog::Formatter)
+XLOG_SET_FORMATTER(xlog::BaseFormatter)
 
 int main()
 {
@@ -11,5 +12,6 @@ int main()
     xlog::log().warning("main", "warning '%s'", "warning");
     xlog::log().info("main", "info '%s'", "info");
     xlog::log().debug("main", "debug '%s'", "debug");
+    lib::testLog();
     return 0;
 }

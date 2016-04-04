@@ -4,12 +4,10 @@
 #include <ctime>
 #include <cstdarg>
 
-#include "xlog/xlog.h"
-
 namespace xlog
 {
     class IFormatter;
-    class LogContext;
+    struct LogContext;
 
     class ILogger
     {

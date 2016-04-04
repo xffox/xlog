@@ -4,8 +4,6 @@
 #include <cstdarg>
 #include <string>
 
-#include "xlog/xlog.h"
-
 namespace xlog
 {
     struct LogContext;

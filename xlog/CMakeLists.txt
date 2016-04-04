@@ -14,5 +14,5 @@ set(XLOG_LIBS ${XLOG_LIBS} PARENT_SCOPE)
 
 file(GLOB XLOG_SRCS "src/*.cpp")
 
-add_library(${XLOG_NAME} SHARED ${XLOG_SRCS})
+add_library(${XLOG_NAME} STATIC ${XLOG_SRCS})
 target_link_libraries(${XLOG_NAME} ${CMAKE_THREAD_LIBS_INIT})

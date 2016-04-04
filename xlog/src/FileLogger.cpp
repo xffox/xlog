@@ -1,6 +1,4 @@
-#include "xlog/ConsoleLogger.h"
-
-#include <iostream>
+#include "xlog/FileLogger.h"
 
 #include "xlog/IFormatter.h"
 #include "xlog/LogContext.h"
@@ -8,20 +6,20 @@
 
 namespace xlog
 {
-    ConsoleLogger::ConsoleLogger()
-        :level(LOG_LEVEL_DEBUG){}
+    FileLogger::FileLogger(const Params &params)
+        :level(params.level), stream(params.filename.c_str(),
+            std::ios::out)
+    {
+    }
 
-    ConsoleLogger::ConsoleLogger(LogLevel level)
-        :level(level){}
-
-    void ConsoleLogger::log(const IFormatter &formatter,
+    void FileLogger::log(const IFormatter &formatter,
         const LogContext &context, const char *msg, va_list args)
     {
         if(context.level >= level)
         {
             char buf[1024];
             formatter.format(buf, sizeof(buf), context, msg, args);
-            std::cout<<buf<<std::endl;
+            stream<<buf<<std::endl;
         }
     }
 }

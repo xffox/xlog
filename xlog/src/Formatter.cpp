@@ -2,7 +2,6 @@
 
 #include <cstdio>
 #include <sstream>
-#include <thread>
 
 #include "xlog/LogContext.h"
 
@@ -24,13 +23,6 @@ namespace xlog
             };
             return '-';
         }
-
-        inline std::string makeThreadId(const std::thread::id &id)
-        {
-            std::stringstream stream;
-            stream<<id;
-            return stream.str();
-        }
     }
 
     void Formatter::format(char *buf, std::size_t size,
@@ -38,10 +30,16 @@ namespace xlog
     {
         char msgBuf[1024];
         BaseFormatter::format(msgBuf, sizeof(msgBuf), context, msg, args);
-        snprintf(buf, size, "[%lu][%c][%s:%s] %s",
+#ifndef _MSC_VER
+        snprintf(buf, size, "[%lu][%c][%s] %s",
             static_cast<unsigned long>(context.time),
             makeLogLevel(context.level),
-            makeThreadId(context.threadId).c_str(),
             context.context, msgBuf);
+#else
+        _snprintf(buf, size, "[%lu][%c][%s] %s",
+            static_cast<unsigned long>(context.time),
+            makeLogLevel(context.level),
+            context.context, msgBuf);
+#endif
     }
 }
