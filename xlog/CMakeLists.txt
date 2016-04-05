@@ -4,7 +4,7 @@ include(FindThreads)
 
 set(XLOG_NAME xlog)
 
-set(XLOG_INCLUDES "${CMAKE_SOURCE_DIR}/xlog/include")
+set(XLOG_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(XLOG_INCLUDES ${XLOG_INCLUDES} PARENT_SCOPE)
 
 include_directories(${XLOG_INCLUDES})
