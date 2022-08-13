@@ -1,8 +1,7 @@
-#include "xlog/FileLogger.h"
+#include "xlog/file_logger.hpp"
 
-#include "xlog/IFormatter.h"
-#include "xlog/LogContext.h"
-#include "xlog/xlog.h"
+#include "xlog/formatter.hpp"
+#include "xlog/log_context.hpp"
 
 namespace xlog
 {

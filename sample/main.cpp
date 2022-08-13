@@ -1,10 +1,8 @@
-#include "xlog/xlog.h"
-#include "xlog/ConsoleLogger.h"
-#include "xlog/Formatter.h"
+#include <xlog/xlog.h>
+
 #include "lib.h"
 
-XLOG_SET_LOGGER(xlog::ConsoleLogger)
-XLOG_SET_FORMATTER(xlog::BaseFormatter)
+XLOG_DEFINE_CONFIG(xlog::DefaultLogger, xlog::DefaultFormatter)
 
 int main()
 {

@@ -1,11 +1,11 @@
-#ifndef XLOG_FORMATTER_H
-#define XLOG_FORMATTER_H
+#ifndef XLOG_FORMATFORMATTER_HPP
+#define XLOG_FORMATFORMATTER_HPP
 
-#include "xlog/BaseFormatter.h"
+#include "xlog/base_formatter.hpp"
 
 namespace xlog
 {
-    class Formatter: public BaseFormatter
+    class FormatFormatter: public BaseFormatter
     {
     public:
         virtual void format(char *buf, std::size_t size,

@@ -1,5 +1,5 @@
-#ifndef XLOG_IFORMATTER_H
-#define XLOG_IFORMATTER_H
+#ifndef XLOG_FORMATTER_HPP
+#define XLOG_FORMATTER_HPP
 
 #include <cstdarg>
 #include <string>

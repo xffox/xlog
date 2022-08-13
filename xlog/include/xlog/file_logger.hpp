@@ -1,11 +1,11 @@
-#ifndef XLOG_FILELOGGER_H
-#define XLOG_FILELOGGER_H
+#ifndef XLOG_FILELOGGER_HPP
+#define XLOG_FILELOGGER_HPP
 
 #include <string>
 #include <fstream>
 
-#include "xlog/ILogger.h"
-#include "xlog/LogLevel.h"
+#include "xlog/logger.hpp"
+#include "xlog/log_level.hpp"
 
 namespace xlog
 {

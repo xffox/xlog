@@ -1,7 +1,7 @@
-#ifndef XLOG_BASEFORMATTER_H
-#define XLOG_BASEFORMATTER_H
+#ifndef XLOG_BASEFORMATTER_HPP
+#define XLOG_BASEFORMATTER_HPP
 
-#include "xlog/IFormatter.h"
+#include "xlog/formatter.hpp"
 
 namespace xlog
 {

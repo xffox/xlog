@@ -1,9 +1,9 @@
-#ifndef XLOG_LOGCONTEXT_H
-#define XLOG_LOGCONTEXT_H
+#ifndef XLOG_LOGCONTEXT_HPP
+#define XLOG_LOGCONTEXT_HPP
 
 #include <ctime>
 
-#include "xlog/LogLevel.h"
+#include "xlog/log_level.hpp"
 
 namespace xlog
 {

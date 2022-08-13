@@ -1,5 +1,5 @@
-#ifndef XLOG_LOGLEVEL_H
-#define XLOG_LOGLEVEL_H
+#ifndef XLOG_LOGLEVEL_HPP
+#define XLOG_LOGLEVEL_HPP
 
 namespace xlog
 {

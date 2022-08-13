@@ -1,18 +1,13 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.0)
 
-include(FindThreads)
-
-set(XLOG_NAME xlog)
+set(XLOG xlog)
+set(XLOG ${XLOG} PARENT_SCOPE)
 
 set(XLOG_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include")
-set(XLOG_INCLUDES ${XLOG_INCLUDES} PARENT_SCOPE)
 
 include_directories(${XLOG_INCLUDES})
 
-set(XLOG_LIBS ${XLOG_NAME})
-set(XLOG_LIBS ${XLOG_LIBS} PARENT_SCOPE)
+file(GLOB XLOG_SRCS "src/*.cpp" "src/*/*.cpp")
 
-file(GLOB XLOG_SRCS "src/*.cpp")
-
-add_library(${XLOG_NAME} STATIC ${XLOG_SRCS})
-target_link_libraries(${XLOG_NAME} ${CMAKE_THREAD_LIBS_INIT})
+add_library(${XLOG} STATIC ${XLOG_SRCS})
+target_include_directories(${XLOG} PUBLIC ${XLOG_INCLUDES})

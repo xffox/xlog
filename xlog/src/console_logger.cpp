@@ -1,10 +1,9 @@
-#include "xlog/ConsoleLogger.h"
+#include "xlog/console_logger.hpp"
 
 #include <iostream>
 
-#include "xlog/IFormatter.h"
-#include "xlog/LogContext.h"
-#include "xlog/xlog.h"
+#include "xlog/formatter.hpp"
+#include "xlog/log_context.hpp"
 
 namespace xlog
 {

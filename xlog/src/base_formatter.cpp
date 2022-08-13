@@ -1,4 +1,4 @@
-#include "xlog/BaseFormatter.h"
+#include "xlog/base_formatter.hpp"
 
 #include <cstdio>
 

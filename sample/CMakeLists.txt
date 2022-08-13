@@ -1,10 +1,8 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.0)
 
-include_directories(${XLOG_INCLUDES})
+set(XLOG_SAMPLE "sample")
 
-set(SAMPLE_NAME "sample")
+file(GLOB XLOG_SAMPLE_SRCS "*.cpp")
 
-file(GLOB SAMPLE_SRCS "*.cpp")
-
-add_executable(${SAMPLE_NAME} ${SAMPLE_SRCS})
-target_link_libraries(${SAMPLE_NAME} ${XLOG_LIBS})
+add_executable(${XLOG_SAMPLE} ${XLOG_SAMPLE_SRCS})
+target_link_libraries(${XLOG_SAMPLE} ${XLOG})

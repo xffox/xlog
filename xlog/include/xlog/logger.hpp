@@ -1,5 +1,5 @@
-#ifndef XLOG_ILOGGER_H
-#define XLOG_ILOGGER_H
+#ifndef XLOG_LOGGER_HPP
+#define XLOG_LOGGER_HPP
 
 #include <ctime>
 #include <cstdarg>

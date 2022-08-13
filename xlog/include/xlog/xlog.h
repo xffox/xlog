@@ -1,70 +1,20 @@
 #ifndef XLOG_XLOG_H
 #define XLOG_XLOG_H
 
-#include "xlog/Log.h"
+#include "xlog/inner/log.hpp"
+#include "xlog/config.hpp"
+#include "xlog/console_logger.hpp"
+#include "xlog/format_formatter.hpp"
 
 namespace xlog
 {
-    inline Log &log()
+    using DefaultLogger = ConsoleLogger;
+    using DefaultFormatter = FormatFormatter;
+
+    inline inner::Log &log()
     {
-        return Log::getInstance();
+        return inner::Log::getInstance();
     }
-}
-
-// static can be transformed to dynamic with an additional logger
-// implementation
-#define XLOG_SET_LOGGER(type) \
-namespace xlog \
-{ \
-    template<> \
-    ILogger *getLogger(const Log&) \
-    { \
-        static type logger; \
-        return &logger; \
-    } \
-}
-
-#define XLOG_SET_NO_LOGGER() \
-namespace xlog \
-{ \
-    template<> \
-    ILogger *getLogger(const Log&) \
-    { \
-        return nullptr; \
-    } \
-}
-
-#define XLOG_SET_LOGGER_CONF(type, conf) \
-namespace xlog \
-{ \
-    template<> \
-    ILogger *getLogger(const Log&) \
-    { \
-        static type logger(conf); \
-        return &logger; \
-    } \
-}
-
-#define XLOG_SET_FORMATTER(type) \
-namespace xlog \
-{ \
-    template<> \
-    IFormatter &getFormatter(const Log&) \
-    { \
-        static type formatter; \
-        return formatter; \
-    } \
-}
-
-#define XLOG_SET_FORMATTER_CONF(type, conf) \
-namespace xlog \
-{ \
-    template<> \
-    IFormatter &getFormatter(const Log&) \
-    { \
-        static type formatter(conf); \
-        return formatter; \
-    } \
 }
 
 #endif

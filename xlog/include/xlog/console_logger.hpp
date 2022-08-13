@@ -1,8 +1,8 @@
-#ifndef XLOG_CONSOLELOGGER_H
-#define XLOG_CONSOLELOGGER_H
+#ifndef XLOG_CONSOLELOGGER_HPP
+#define XLOG_CONSOLELOGGER_HPP
 
-#include "xlog/ILogger.h"
-#include "xlog/LogLevel.h"
+#include "xlog/logger.hpp"
+#include "xlog/log_level.hpp"
 
 namespace xlog
 {

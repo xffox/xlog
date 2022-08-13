@@ -1,9 +1,9 @@
-#include "xlog/Formatter.h"
+#include "xlog/format_formatter.hpp"
 
 #include <cstdio>
 #include <sstream>
 
-#include "xlog/LogContext.h"
+#include "xlog/log_context.hpp"
 
 namespace xlog
 {
@@ -25,7 +25,7 @@ namespace xlog
         }
     }
 
-    void Formatter::format(char *buf, std::size_t size,
+    void FormatFormatter::format(char *buf, std::size_t size,
         const LogContext &context, const char *msg, va_list args) const
     {
         char msgBuf[1024];
