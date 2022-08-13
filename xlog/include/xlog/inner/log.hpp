@@ -17,6 +17,7 @@ namespace xlog::config
 {
     ILogger &logger();
     IFormatter &formatter();
+    extern const LogLevel LOG_LEVEL;
 }
 
 namespace xlog::inner

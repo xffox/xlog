@@ -2,7 +2,8 @@
 
 #include "lib.h"
 
-XLOG_DEFINE_CONFIG(xlog::DefaultLogger, xlog::DefaultFormatter)
+XLOG_DEFINE_CONFIG(xlog::LogLevel::LOG_LEVEL_DEBUG,
+    xlog::DefaultLogger, xlog::DefaultFormatter)
 
 int main()
 {

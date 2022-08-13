@@ -49,7 +49,10 @@ namespace xlog::inner
     void Log::log(LogLevel level, const char *context, const char *msg,
         va_list args)
     {
-        logger.log(formatter, LogContext(level, time(0), context),
-            msg, args);
+        if(level >= config::LOG_LEVEL)
+        {
+            logger.log(formatter, LogContext(level, time(0), context),
+                msg, args);
+        }
     }
 }

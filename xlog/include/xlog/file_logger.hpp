@@ -16,10 +16,9 @@ namespace xlog
     public:
         struct Params
         {
-            Params(const std::string &filename, LogLevel level)
-                :filename(filename), level(level){}
+            Params(const std::string &filename)
+                :filename(filename){}
             std::string filename;
-            LogLevel level;
         };
 
     public:
@@ -33,7 +32,6 @@ namespace xlog
         FileLogger &operator=(const FileLogger&);
 
     private:
-        const LogLevel level;
         std::ofstream stream;
     };
 }
