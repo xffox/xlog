@@ -1,6 +1,6 @@
 #include "lib.h"
 
-#include "xlog/xlog.h"
+#include "xlog/xlog.hpp"
 
 namespace lib
 {

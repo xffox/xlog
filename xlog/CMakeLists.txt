@@ -5,8 +5,6 @@ set(XLOG ${XLOG} PARENT_SCOPE)
 
 set(XLOG_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
-include_directories(${XLOG_INCLUDES})
-
 file(GLOB XLOG_SRCS "src/*.cpp" "src/*/*.cpp")
 
 add_library(${XLOG} STATIC ${XLOG_SRCS})

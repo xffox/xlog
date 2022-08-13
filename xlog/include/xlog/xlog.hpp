@@ -1,5 +1,5 @@
-#ifndef XLOG_XLOG_H
-#define XLOG_XLOG_H
+#ifndef XLOG_XLOG_HPP
+#define XLOG_XLOG_HPP
 
 #include "xlog/inner/log.hpp"
 #include "xlog/config.hpp"

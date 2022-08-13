@@ -1,4 +1,4 @@
-#include <xlog/xlog.h>
+#include <xlog/xlog.hpp>
 
 #include "lib.h"
 
